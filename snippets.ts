@@ -89,13 +89,30 @@
   {trigger: /\\mathbf{([A-Za-z])}(\d)/, replacement: "\\mathbf{[[0]]}_{[[1]]}", options: "rmA"},
 
   {trigger: "xnn", replacement: "x_{n}", options: "mA"},
-  {trigger: "\\xii", replacement: "x_{i}", options: "mA", priority: 1},
-  {trigger: "xjj", replacement: "x_{j}", options: "mA"},
   {trigger: "xnp", replacement: "x_{n+1}", options: "mA"},
   {trigger: "xnm", replacement: "x_{n-1}", options: "mA"},
+  {trigger: "xtt", replacement: "x_{t}", options: "mA"},
+  {trigger: "xtp", replacement: "x_{t+1}", options: "mA"},
+  {trigger: "xtm", replacement: "x_{t-1}", options: "mA"},
+  {trigger: "\\xii", replacement: "x_{i}", options: "mA", priority: 1},
+  {trigger: "\\xip", replacement: "x_{i+1}", options: "mA", priority: 1},
+  {trigger: "\\xim", replacement: "x_{i-1}", options: "mA", priority: 1},
+  {trigger: "xjj", replacement: "x_{j}", options: "mA"},
+  {trigger: "xjp", replacement: "x_{j+1}", options: "mA"},
+  {trigger: "xjm", replacement: "x_{j-1}", options: "mA"},
+
   {trigger: "ynn", replacement: "y_{n}", options: "mA"},
+  {trigger: "ynp", replacement: "y_{n+1}", options: "mA"},
+  {trigger: "ynm", replacement: "y_{n-1}", options: "mA"},
+  {trigger: "ytt", replacement: "y_{t}", options: "mA"},
+  {trigger: "ytp", replacement: "y_{t+1}", options: "mA"},
+  {trigger: "ytm", replacement: "y_{t-1}", options: "mA"},
   {trigger: "yii", replacement: "y_{i}", options: "mA"},
+  {trigger: "yip", replacement: "y_{i+1}", options: "mA"},
+  {trigger: "yim", replacement: "y_{i-1}", options: "mA"},
   {trigger: "yjj", replacement: "y_{j}", options: "mA"},
+  {trigger: "yjp", replacement: "y_{j+1}", options: "mA"},
+  {trigger: "yjm", replacement: "y_{j-1}", options: "mA"},
 
   // Symbols
   {trigger: "oo", replacement: "\\infty", options: "mA"},
@@ -315,4 +332,7 @@
   {trigger: "EE", replacement: "\\mathbb{E}[$0]", options: "mA"},
   // converge to:
   {trigger: "-->", replacement: "\\xrightarrow{${0:i.p}}$1", options: "mA"},
+  // because, therefore:
+  {trigger: "because", replacement: "\\because", options: "mA"},
+  {trigger: "therefore", replacement: "\\therefore", options: "mA"},
 ]
