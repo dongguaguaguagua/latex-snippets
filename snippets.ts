@@ -55,6 +55,10 @@
   {trigger: "Im", replacement: "\\mathrm{Im}", options: "mA"},
   {trigger: "bf", replacement: "\\mathbf{$0}", options: "mA"},
   {trigger: "rm", replacement: "\\mathrm{$0}$1", options: "mA"},
+  {trigger: "sf", replacement: "\\mathsf{$0}$1", options: "mA"},
+  {trigger: "cal", replacement: "\\mathcal{$0}$1", options: "mA"},
+  {trigger: "bb", replacement: "\\mathbb{$0}$1", options: "mA"},
+  {trigger: "frak", replacement: "\\mathfrak{$0}$1", options: "mA"},
 
   // Linear algebra
   {trigger: /([^\\])(det)/, replacement: "[[0]]\\[[1]]", options: "rmA"},
@@ -215,12 +219,12 @@
 
 
   // Visual operations
-  {trigger: "U", replacement: "\\underbrace{ ${VISUAL} }_{ $0 }", options: "mA"},
-  {trigger: "O", replacement: "\\overbrace{ ${VISUAL} }^{ $0 }", options: "mA"},
-  {trigger: "B", replacement: "\\underset{ $0 }{ ${VISUAL} }", options: "mA"},
-  {trigger: "C", replacement: "\\cancel{ ${VISUAL} }", options: "mA"},
-  {trigger: "K", replacement: "\\cancelto{ $0 }{ ${VISUAL} }", options: "mA"},
-  {trigger: "S", replacement: "\\sqrt{ ${VISUAL} }", options: "mA"},
+  {trigger: "U", replacement: "\\underbrace{ ${VISUAL} }_{ $0 }", options: "v"},
+  {trigger: "O", replacement: "\\overbrace{ ${VISUAL} }^{ $0 }", options: "v"},
+  {trigger: "B", replacement: "\\underset{ $0 }{ ${VISUAL} }", options: "v"},
+  {trigger: "C", replacement: "\\cancel{ ${VISUAL} }", options: "v"},
+  {trigger: "K", replacement: "\\cancelto{ $0 }{ ${VISUAL} }", options: "v"},
+  {trigger: "S", replacement: "\\sqrt{ ${VISUAL} }", options: "v"},
 
 
   // Physics
@@ -235,13 +239,6 @@
   {trigger: "ket", replacement: "\\ket{$0} $1", options: "mA"},
   {trigger: "brk", replacement: "\\braket{ $0 | $1 } $2", options: "mA"},
   {trigger: "outer", replacement: "\\ket{${0:\\psi}} \\bra{${0:\\psi}} $1", options: "mA"},
-
-  // Chemistry
-  {trigger: "pu", replacement: "\\pu{ $0 }", options: "mA"},
-  {trigger: "cee", replacement: "\\ce{ $0 }", options: "mA"},
-  {trigger: "he4", replacement: "{}^{4}_{2}He ", options: "mA"},
-  {trigger: "he3", replacement: "{}^{3}_{2}He ", options: "mA"},
-  {trigger: "iso", replacement: "{}^{${0:4}}_{${1:2}}${2:He}", options: "mA"},
 
 
   // Environments
@@ -269,7 +266,7 @@
   {trigger: "norm", replacement: "\\lvert $0 \\rvert $1", options: "mA", priority: 1},
   {trigger: "Norm", replacement: "\\lVert $0 \\rVert $1", options: "mA", priority: 1},
   {trigger: "ceil", replacement: "\\lceil $0 \\rceil $1", options: "mA"},
-  {trigger: "floor", replacement: "\\lfloor $0 \\rfloor $1", options: "mA"},
+  {trigger: "flor", replacement: "\\lfloor $0 \\rfloor $1", options: "mA"},
   {trigger: "mod", replacement: "|$0|$1", options: "mA"},
   {trigger: "(", replacement: "(${VISUAL})", options: "mA"},
   {trigger: "[", replacement: "[${VISUAL}]", options: "mA"},
@@ -324,15 +321,25 @@
   {trigger: "rgb", replacement: "{\\color [RGB]{${0:0,0,0}} $1}", options: "mA"},
   // expand a box with 5px extra space, default color is red.
   {trigger: "bbox", replacement: "\\bbox [5px, border: 1px solid ${0:red}]{$1}", options: "mA"},
+  {trigger: "X", replacement: "\\bbox [5px, border: 1px solid ${0:red}]{${VISUAL}}$1", options: "v"},
   // `~` and similar
   {trigger: "~", replacement: "\\tilde{$0}", options: "mA"},
   // independent and identically distributed.
   {trigger: "iid", replacement: "\\overset{\\text{i.i.d.}}{\\sim}", options: "mA"},
-  // exceptations:
+  // Exceptations, Variance, Covariance
   {trigger: "EE", replacement: "\\mathbb{E}[$0]", options: "mA"},
+  {trigger: "var", replacement: "\\mathrm{Var}($0)", options: "mA"},
+  {trigger: "cov", replacement: "\\mathrm{Cov}($0, $1)", options: "mA"},
   // converge to:
   {trigger: "-->", replacement: "\\xrightarrow{${0:i.p}}$1", options: "mA"},
   // because, therefore:
   {trigger: "because", replacement: "\\because", options: "mA"},
   {trigger: "therefore", replacement: "\\therefore", options: "mA"},
+  // displaystyle and textstyle
+  {trigger: "dstyle", replacement: "\\displaystyle ", options: "mA"},
+  {trigger: "tstyle", replacement: "\\textstyle ", options: "mA"},
+  // add math operators like max, min
+  {trigger: "max", replacement: "\\max", options: "mA"},
+  {trigger: "min", replacement: "\\min", options: "mA"},
+  {trigger: "op", replacement: "\\mathop{${0:operator}}\\limits_{${1:x}}", options: "mA"},
 ]
