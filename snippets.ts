@@ -91,7 +91,8 @@
   {trigger: "xnn", replacement: "x_{n}", options: "mA"},
   {trigger: "\\xii", replacement: "x_{i}", options: "mA", priority: 1},
   {trigger: "xjj", replacement: "x_{j}", options: "mA"},
-  {trigger: "xp1", replacement: "x_{n+1}", options: "mA"},
+  {trigger: "xnp", replacement: "x_{n+1}", options: "mA"},
+  {trigger: "xnm", replacement: "x_{n-1}", options: "mA"},
   {trigger: "ynn", replacement: "y_{n}", options: "mA"},
   {trigger: "yii", replacement: "y_{i}", options: "mA"},
   {trigger: "yjj", replacement: "y_{j}", options: "mA"},
@@ -310,4 +311,8 @@
   {trigger: "~", replacement: "\\tilde{$0}", options: "mA"},
   // independent and identically distributed.
   {trigger: "iid", replacement: "\\overset{\\text{i.i.d.}}{\\sim}", options: "mA"},
+  // exceptations:
+  {trigger: "EE", replacement: "\\mathbb{E}[$0]", options: "mA"},
+  // converge to:
+  {trigger: "-->", replacement: "\\xrightarrow{${0:i.p}}$1", options: "mA"},
 ]
