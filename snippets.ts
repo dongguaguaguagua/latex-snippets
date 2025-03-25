@@ -136,7 +136,7 @@
 
   {trigger: "===", replacement: "\\equiv", options: "mA"},
   {trigger: "!=", replacement: "\\neqslant", options: "mA"},
-  {trigger: ">=", replacement: "\\geqslant", options: "mA"},
+  {trigger: ">=", replacement: "\\geq", options: "mA"},
   {trigger: "<=", replacement: "\\leq", options: "mA"},
   {trigger: ">>", replacement: "\\gg", options: "mA"},
   {trigger: "<<", replacement: "\\ll", options: "mA"},
@@ -326,6 +326,7 @@
   {trigger: "~", replacement: "\\tilde{$0}", options: "mA"},
   // independent and identically distributed.
   {trigger: "iid", replacement: "\\overset{\\text{i.i.d.}}{\\sim}", options: "mA"},
+  {trigger: "independ", replacement: "⫫", options: "mA"},
   // Exceptations, Variance, Covariance
   {trigger: "EE", replacement: "\\mathbb{E}[$0]", options: "mA"},
   {trigger: "var", replacement: "\\mathrm{Var}($0)", options: "mA"},
@@ -342,4 +343,6 @@
   {trigger: "max", replacement: "\\max", options: "mA"},
   {trigger: "min", replacement: "\\min", options: "mA"},
   {trigger: "op", replacement: "\\mathop{${0:operator}}\\limits_{${1:x}}", options: "mA"},
+  // abs
+  {trigger: "abs", replacement: "\\left | $0 \\right |$1", options: "mA"},
 ]
