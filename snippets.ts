@@ -51,9 +51,9 @@
 
   {trigger: /([^\\])(exp|log|ln)/, replacement: "[[0]]\\[[1]]", options: "rmA"},
   {trigger: "conj", replacement: "^{*}", options: "mA"},
-  {trigger: "Re", replacement: "\\mathrm{Re}", options: "mA"},
-  {trigger: "Im", replacement: "\\mathrm{Im}", options: "mA"},
-  {trigger: "bf", replacement: "\\mathbf{$0}", options: "mA"},
+  {trigger: "Re", replacement: "\\mathrm{Re}$1", options: "mA"},
+  {trigger: "Im", replacement: "\\mathrm{Im}$1", options: "mA"},
+  {trigger: "bf", replacement: "\\mathbf{$0}$1", options: "mA"},
   {trigger: "rm", replacement: "\\mathrm{$0}$1", options: "mA"},
   {trigger: "sf", replacement: "\\mathsf{$0}$1", options: "mA"},
   {trigger: "cal", replacement: "\\mathcal{$0}$1", options: "mA"},
@@ -135,7 +135,7 @@
   {trigger: "para", replacement: "\\parallel", options: "mA"},
 
   {trigger: "===", replacement: "\\equiv", options: "mA"},
-  {trigger: "!=", replacement: "\\neqslant", options: "mA"},
+  {trigger: "!=", replacement: "\\neq", options: "mA"},
   {trigger: ">=", replacement: "\\geq", options: "mA"},
   {trigger: "<=", replacement: "\\leq", options: "mA"},
   {trigger: ">>", replacement: "\\gg", options: "mA"},
@@ -328,9 +328,9 @@
   {trigger: "iid", replacement: "\\overset{\\text{i.i.d.}}{\\sim}", options: "mA"},
   {trigger: "independ", replacement: "⫫", options: "mA"},
   // Exceptations, Variance, Covariance
-  {trigger: "EE", replacement: "\\mathbb{E}[$0]", options: "mA"},
-  {trigger: "var", replacement: "\\mathrm{Var}($0)", options: "mA"},
-  {trigger: "cov", replacement: "\\mathrm{Cov}($0, $1)", options: "mA"},
+  {trigger: "EE", replacement: "\\mathbb{E}[$0]$1", options: "mA"},
+  {trigger: "var", replacement: "\\mathrm{Var}($0)$1", options: "mA"},
+  {trigger: "cov", replacement: "\\mathrm{Cov}($0, $1)$2", options: "mA"},
   // converge to:
   {trigger: "-->", replacement: "\\xrightarrow{${0:i.p}}$1", options: "mA"},
   // because, therefore:
@@ -345,4 +345,6 @@
   {trigger: "op", replacement: "\\mathop{${0:operator}}\\limits_{${1:x}}", options: "mA"},
   // abs
   {trigger: "abs", replacement: "\\left | $0 \\right |$1", options: "mA"},
+  // matrix transpose
+  {trigger: "TT", replacement: "^{\\top}", options: "mA"},
 ]
