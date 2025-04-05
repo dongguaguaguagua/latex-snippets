@@ -57,7 +57,7 @@
   {trigger: "rm", replacement: "\\mathrm{$0}$1", options: "mA"},
   {trigger: "sf", replacement: "\\mathsf{$0}$1", options: "mA"},
   {trigger: "cal", replacement: "\\mathcal{$0}$1", options: "mA"},
-  {trigger: "bb", replacement: "\\mathbb{$0}$1", options: "mA"},
+  {trigger: "bbb", replacement: "\\mathbb{$0}$1", options: "mA"},
   {trigger: "frak", replacement: "\\mathfrak{$0}$1", options: "mA"},
 
   // Linear algebra
@@ -221,10 +221,11 @@
   // Visual operations
   {trigger: "U", replacement: "\\underbrace{ ${VISUAL} }_{ $0 }", options: "v"},
   {trigger: "O", replacement: "\\overbrace{ ${VISUAL} }^{ $0 }", options: "v"},
-  {trigger: "B", replacement: "\\underset{ $0 }{ ${VISUAL} }", options: "v"},
+  {trigger: "u", replacement: "\\underset{ $0 }{ ${VISUAL} }", options: "v"},
+  {trigger: "o", replacement: "\\overset{ $0 }{ ${VISUAL} }", options: "v"},
   {trigger: "C", replacement: "\\cancel{ ${VISUAL} }", options: "v"},
   {trigger: "K", replacement: "\\cancelto{ $0 }{ ${VISUAL} }", options: "v"},
-  {trigger: "S", replacement: "\\sqrt{ ${VISUAL} }", options: "v"},
+
 
 
   // Physics
@@ -331,6 +332,7 @@
   {trigger: "EE", replacement: "\\mathbb{E}[$0]$1", options: "mA"},
   {trigger: "var", replacement: "\\mathrm{Var}($0)$1", options: "mA"},
   {trigger: "cov", replacement: "\\mathrm{Cov}($0, $1)$2", options: "mA"},
+  {trigger: "cor", replacement: "\\mathrm{Corr}($0, $1)$2", options: "mA"},
   // converge to:
   {trigger: "-->", replacement: "\\xrightarrow{${0:i.p}}$1", options: "mA"},
   // because, therefore:
@@ -347,4 +349,6 @@
   {trigger: "abs", replacement: "\\left | $0 \\right |$1", options: "mA"},
   // matrix transpose
   {trigger: "TT", replacement: "^{\\top}", options: "mA"},
+  // Chinese
+  // {trigger: "、、", replacement: "\\\\", options: "mA"},
 ]
