@@ -347,8 +347,14 @@
   {trigger: "op", replacement: "\\mathop{${0:operator}}\\limits_{${1:x}}", options: "mA"},
   // abs
   {trigger: "abs", replacement: "\\left | $0 \\right |$1", options: "mA"},
-  // matrix transpose
+  // matrix
   {trigger: "TT", replacement: "^{\\top}", options: "mA"},
+  {trigger: "c..", replacement: "\\cdots", options: "mA"},
+  {trigger: "d..", replacement: "\\ddots", options: "mA"},
+  {trigger: "l..", replacement: "\\ldots", options: "mA"},
+  {trigger: "v..", replacement: "\\vdots", options: "mA"},
+  {trigger: "`", replacement: "\\cdot $0", options: "mA"},
+
   // Chinese
   // {trigger: "、、", replacement: "\\\\", options: "mA"},
 ]
