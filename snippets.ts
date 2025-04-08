@@ -36,7 +36,7 @@
   // Text environment
   {trigger: "text", replacement: "\\text{$0}$1", options: "mA"},
   {trigger: "\"", replacement: "\\text{$0}$1", options: "mA"},
-
+  {trigger: "\"", replacement: "\\text{${VISUAL}}", options: "v"},
   // Basic operations
   {trigger: "sr", replacement: "^{2}", options: "mA"},
   {trigger: "cb", replacement: "^{3}", options: "mA"},
@@ -135,9 +135,9 @@
   {trigger: "para", replacement: "\\parallel", options: "mA"},
 
   {trigger: "===", replacement: "\\equiv", options: "mA"},
-  {trigger: "!=", replacement: "\\neq", options: "mA"},
-  {trigger: ">=", replacement: "\\geq", options: "mA"},
-  {trigger: "<=", replacement: "\\leq", options: "mA"},
+  {trigger: "!=", replacement: "\\neq ", options: "mA"},
+  {trigger: ">=", replacement: "\\geq ", options: "mA"},
+  {trigger: "<=", replacement: "\\leq ", options: "mA"},
   {trigger: ">>", replacement: "\\gg", options: "mA"},
   {trigger: "<<", replacement: "\\ll", options: "mA"},
   {trigger: "simm", replacement: "\\sim", options: "mA"},
@@ -318,7 +318,7 @@
   }, options: "mA", description: "N x N identity matrix"},
   // custom:
   // enable color to expand colored text
-  {trigger: "color", replacement: "{\\color {${0:Red}} $1}", options: "mA"},
+  {trigger: "color", replacement: "{\\color {${0:Red}} {$1}}", options: "mA"},
   {trigger: "rgb", replacement: "{\\color [RGB]{${0:0,0,0}} $1}", options: "mA"},
   // expand a box with 5px extra space, default color is red.
   {trigger: "bbox", replacement: "\\bbox [5px, border: 1px solid ${0:red}]{$1}", options: "mA"},
@@ -354,7 +354,14 @@
   {trigger: "l..", replacement: "\\ldots", options: "mA"},
   {trigger: "v..", replacement: "\\vdots", options: "mA"},
   {trigger: "`", replacement: "\\cdot $0", options: "mA"},
+  {trigger: "hadama", replacement: "\\circ ", options: "mA"},
+  {trigger: "kronec", replacement: "\\otimes ", options: "mA"},
 
+  // define
+  {trigger: "define", replacement: "\\triangleq", options: "mA"},
+  //quad
+  // {trigger: " ", replacement: "\\quad$0", options: "mA"},
+  // {trigger: "  ", replacement: "\\qquad $0", options: "mA"},
   // Chinese
   // {trigger: "、、", replacement: "\\\\", options: "mA"},
 ]
