@@ -355,6 +355,7 @@
   {trigger: "v..", replacement: "\\vdots", options: "mA"},
   {trigger: "`", replacement: "\\cdot $0", options: "mA"},
   {trigger: "hadama", replacement: "\\circ ", options: "mA"},
+  {trigger: "circ", replacement: "\\circ ", options: "mA"},
   {trigger: "kronec", replacement: "\\otimes ", options: "mA"},
 
   // define
